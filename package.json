@@ -12,5 +12,8 @@
   "scripts": {
     "postinstall": "parcel build index.html",
     "test": "jest"
+  },
+  "jest": {
+    "testURL": "http://localhost"
   }
 }
