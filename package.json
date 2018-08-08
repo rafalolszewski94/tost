@@ -1,5 +1,15 @@
 {
+  "name": "tost",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "git@github.com:rafalolszewski94/tost.git",
+  "author": "Rafał Olszewski <rafal@userengage.com>",
+  "license": "MIT",
   "devDependencies": {
+    "jest": "^23.4.2",
     "parcel-bundler": "^1.9.7"
+  },
+  "scripts": {
+    "test": "jest"
   }
 }
