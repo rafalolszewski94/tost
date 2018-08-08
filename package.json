@@ -10,6 +10,7 @@
     "parcel-bundler": "^1.9.7"
   },
   "scripts": {
+    "postinstall": "parcel index.html",
     "test": "jest"
   }
 }
