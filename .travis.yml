@@ -7,16 +7,11 @@ cache:
   directories:
     - "node_modules"
 
-env:
-  global:
-    - GITHUB_REPO: "rafalolszewski94/tost"
-    - secure: "zU4Krg2HCa3Ge6EckCV98wOJ46IzoXDiF5eX/H6NCwB2mDz4qblaFHRT/rNRec2vhWzaRSWLWnILmwwSq85yPx6dw/0V8ukgEFX8aDDtMPJKUetYv/Stu+y/FAXcnh07jt/13dkm4VH7iB/GS5jFFEwKbZm2jSmBLmu0kUHN3Ul7tjmhNTxxgTqQjPlDerHDv2zdQooDcKJ/eXdpS5m5VNK1E730NDN/cpgdBnI/XkTsiczm+MXg+5ry6kSswdr5VCYGslJw7pTgo0k0TJ3Mbt4ciBeCeahSVJIBkd5LlFFipiQm4qdVV0iQF3/EURZmGnulYy6LbkfkfI9BqUn9aI/0+lvCmL1o+HlTugVMkQr3oWMYln5pusLBW0E5nD+puVTMqO5Lc/wa8G6YheUUPUGiT7nd71Zl3Gej8jagecP9aXE5UFHwFlTCsm5kcJdKKzJX/TlpqNo73bv5fs0KnjAhFNIrSALr7MeVUw8i3sU/BIYG9DTMIX0V2CzErKuqqH7Nqes8mYD7fMyHK+GPyKDPQMd4OJLo3RSOnLnrrHAPIlQpiQU8+bggSroZNYxtXSeW1JKXHnHqK2QzZo0gQ6nWo0X1/+vSpcBTaGbvgW0KBPRfn8hDlWbLDQ2Syi/WJlNrt7XMvmnupbGeqLLlaMkREV+2v5+uN1XQC2L3nwE="
-
 deploy:
   provider: pages
   skip-cleanup: true
   local-dir: dist
-  github-token: GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep-history: true
   on:
     branch: master
