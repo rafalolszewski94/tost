@@ -1,0 +1,19 @@
+.tost-container {
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding: 15px 15px 0 0;
+  max-height: 100vh;
+}
+
+.tost {
+  border: 1px solid #fafafa;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 5px rgba(black, 0.2);
+  padding: .75em 1.25em;
+
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}

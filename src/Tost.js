@@ -48,8 +48,8 @@ class Tost {
    * @param id
    */
   destroy(id) {
-    const tostToDestroy = document.querySelector(`[data-id="${id}"]`);
-    tostToDestroy.parentNode.removeChild(tostToDestroy);
+    // const tostToDestroy = document.querySelector(`[data-id="${id}"]`);
+    // tostToDestroy.parentNode.removeChild(tostToDestroy);
   }
 }
 

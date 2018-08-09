@@ -1,0 +1,38 @@
+html,
+body {
+  font-size: 14px;
+  font-family: -apple-system, "Helvetica Neue", "Helvetica", "Arial", "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+button {
+  background-color: #fafafa;
+  border: 1px solid rgba(black, 0.2);
+  appearance: none;
+  outline: none;
+  padding: 1em 2em;
+  font-size: 1.1rem;
+  border-radius: 3px;
+  box-shadow: 0 0 0 3px rgba(black, 0.1);
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid rgba(black, 0.3);
+    box-shadow: 0 0 0 3px rgba(black, 0.15);
+  }
+
+  &:focus {
+    background-color: darken(#fafafa, 2%);
+    border: 1px solid rgba(black, 0.4);
+    box-shadow: 0 0 0 3px rgba(black, 0.2);
+  }
+}

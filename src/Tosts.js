@@ -25,7 +25,7 @@ class Tosts {
         e.preventDefault();
 
         const tost = new Tost({
-          content: 'Test',
+          content: e.currentTarget.dataset.tost,
         }).create();
         this.container.appendChild(tost);
       })
