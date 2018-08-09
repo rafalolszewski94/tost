@@ -7,17 +7,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tost JS</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
     <link rel="stylesheet" href="demo.scss">
+    <link rel="stylesheet" href="./node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css">
     <link rel="stylesheet" href="src/tost.scss">
   </head>
   <body>
 
     <div class="container">
-      <h1>Hello</h1>
+      <h1>Tost JS</h1>
 
-      <button data-tost="Hello world">Trigger tost</button>
+      <p>Example:</p>
+      <pre><code class="line-numbers language-javascript">import Tosts from "./src/index";
+
+new Tosts();</code></pre>
+
+      <button class="btn" data-tost="Hello world">Trigger tost</button>
     </div>
 
-    <script src="src/index.js"></script>
+    <script src="demo.js"></script>
   </body>
 </html>

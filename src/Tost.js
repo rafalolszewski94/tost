@@ -34,13 +34,21 @@ class Tost {
     const tost = document.createElement('div');
     tost.classList.add(`tost`);
     tost.dataset.id = this._id;
-    tost.innerHTML = this.options && this.options.content;
+    tost.innerHTML = `<span>${this.options && this.options.content}</span> <button class="tost-close">&times;</button>`;
 
-    if (this.options.timeout) {
-      setInterval(this.destroy(this._id), this.options.timeout);
-    }
+    this._attachCloseListener(tost.querySelector('.tost-close'), this._id);
+    // if (this.options.timeout) {
+    //   setInterval(this.destroy(this._id), this.options.timeout);
+    // }
 
     return tost;
+  }
+
+  _attachCloseListener(el, id) {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      this.destroy(id);
+    });
   }
 
   /**
@@ -48,8 +56,9 @@ class Tost {
    * @param id
    */
   destroy(id) {
-    // const tostToDestroy = document.querySelector(`[data-id="${id}"]`);
-    // tostToDestroy.parentNode.removeChild(tostToDestroy);
+    console.log('destroying tost of id:', id);
+    const tostToDestroy = document.querySelector(`[data-id="${id}"]`);
+    tostToDestroy.parentNode.removeChild(tostToDestroy);
   }
 }
 

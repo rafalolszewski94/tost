@@ -12,6 +12,10 @@ class Tosts {
   }
 
   _createContainer() {
+    if (document.body.querySelector('.tost-container')) {
+      return;
+    }
+
     const container = document.createElement('div');
     container.classList.add('tost-container');
     this.container = container;

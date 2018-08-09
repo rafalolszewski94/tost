@@ -1,3 +1,3 @@
 import Tosts from './Tosts';
 
-new Tosts();
+export default Tosts;
