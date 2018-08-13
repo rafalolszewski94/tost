@@ -44,18 +44,25 @@ class Tost {
     return tost;
   }
 
+  /**
+   * Attach close event listeners for a button inside a tost.
+   * @param el {HTMLDivElement} Element to listen on
+   * @param id {integer} unique ID of a Tost
+   * @private
+   */
   _attachCloseListener(el, id) {
     el.addEventListener('click', (e) => {
       e.preventDefault();
-      this.destroy(id);
+      this._destroy(id);
     });
   }
 
   /**
    * Destroy Tost instance
    * @param id
+   * @private
    */
-  destroy(id) {
+  _destroy(id) {
     console.log('destroying tost of id:', id);
     const tostToDestroy = document.querySelector(`[data-id="${id}"]`);
     tostToDestroy.parentNode.removeChild(tostToDestroy);
