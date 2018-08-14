@@ -20,6 +20,9 @@ $colors: map_merge(
     top: 0;
     padding: 15px 15px 0 0;
     max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
 
   .tost {
@@ -29,6 +32,7 @@ $colors: map_merge(
     padding: 12px 16px;
     position: relative;
     overflow: hidden;
+    max-width: 300px;
 
     &::before {
       position: absolute;
