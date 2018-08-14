@@ -1,8 +1,9 @@
 import utils from "./utils";
 
 class Tost {
-  constructor() {
+  constructor(tostsInstance) {
     this._id = utils.guid();
+    this.tostsInstance = tostsInstance;
 
     this.add = (options) => {
       if (!options) {
@@ -13,6 +14,11 @@ class Tost {
     }
   }
 
+  /**
+   * Create new tost element and append it to the container.
+   * @param options
+   * @private
+   */
   _add(options) {
     const tost = document.createElement('div');
     tost.classList.add(`tost`);
@@ -39,17 +45,26 @@ class Tost {
     });
   }
 
+  /**
+   * Destroy tost of {id}
+   * @param id {int}
+   */
   destroy(id) {
     console.log('destroying tost of id:', id);
     const tostToDestroy = document.querySelector(`[data-id="${id}"]`);
     tostToDestroy.parentNode.removeChild(tostToDestroy);
   }
 
+  /**
+   *
+   * @param tost {HTMLElement}
+   * @private
+   */
   _appendToContainer(tost) {
     if (!tost) {
       return;
     }
-    document.body.appendChild(tost);
+    this.tostsInstance.el.appendChild(tost);
   }
 }
 

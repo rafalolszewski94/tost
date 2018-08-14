@@ -9,6 +9,10 @@ $colors: map_merge(
     $colors
 );
 
+@function getColor($key: "info") {
+  @return map-get($colors, $key);
+}
+
 :global {
   .tost-container {
     position: fixed;
