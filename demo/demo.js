@@ -1,6 +1,14 @@
-import 'prismjs';
-import 'prismjs/plugins/line-numbers/prism-line-numbers';
+import Tost from '../src';
 
-import Tosts from "../src/index";
+const tostTrigger = document.querySelector('[data-tost]');
+tostTrigger.addEventListener('click', () => {
+  const tostContent = document.querySelector('#tost_content').value;
+  const tostType = document.querySelector('#tost_type').value;
 
-new Tosts();
+
+  const tost = new Tost();
+  tost.add({
+    content: tostContent,
+    type: tostType,
+  })
+});

@@ -25,6 +25,7 @@
     "testEnvironment": "node"
   },
   "dependencies": {
-    "prismjs": "^1.15.0"
+    "prismjs": "^1.15.0",
+    "src": "^1.1.2"
   }
 }

@@ -1,71 +1,55 @@
-/**
- * Generate random (not real) guid.
- * @method
- * @returns {string}
- */
-function guid() {
-  function s4() {
-    return Math.floor((1 + Math.random()) * 0x10000)
-        .toString(16)
-        .substring(1);
-  }
-
-  return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
-}
+import utils from "./utils";
 
 class Tost {
-  /**
-   * Main constructor
-   * @param options
-   */
-  constructor(options) {
-    this.options = Object.assign({
-      content: '',
-      timeout: 2500,
-    }, options);
-    this._id = guid();
+  constructor() {
+    this._id = utils.guid();
+
+    this.add = (options) => {
+      if (!options) {
+        throw new Error('Tost.add() requires options to be passed.');
+      }
+
+      this._add(options);
+    }
   }
 
-  /**
-   * Create Tost instance with options defined in constructor.
-   * @returns {HTMLDivElement}
-   */
-  create() {
+  _add(options) {
     const tost = document.createElement('div');
     tost.classList.add(`tost`);
+
+    if (utils.isValidTostType(options.type)) {
+      tost.classList.add(`tost-${options.type}`);
+    }
     tost.dataset.id = this._id;
-    tost.innerHTML = `<span>${this.options && this.options.content}</span> <button class="tost-close">&times;</button>`;
-
+    tost.innerHTML = `<span>${options && options.content}</span> <button class="tost-close">&times;</button>`;
     this._attachCloseListener(tost.querySelector('.tost-close'), this._id);
-    // if (this.options.timeout) {
-    //   setInterval(this.destroy(this._id), this.options.timeout);
-    // }
-
-    return tost;
+    this._appendToContainer(tost);
   }
 
   /**
-   * Attach close event listeners for a button inside a tost.
-   * @param el {HTMLDivElement} Element to listen on
-   * @param id {integer} unique ID of a Tost
+   *
+   * @param el
+   * @param id
    * @private
    */
   _attachCloseListener(el, id) {
     el.addEventListener('click', (e) => {
       e.preventDefault();
-      this._destroy(id);
+      this.destroy(id);
     });
   }
 
-  /**
-   * Destroy Tost instance
-   * @param id
-   * @private
-   */
-  _destroy(id) {
+  destroy(id) {
     console.log('destroying tost of id:', id);
     const tostToDestroy = document.querySelector(`[data-id="${id}"]`);
     tostToDestroy.parentNode.removeChild(tostToDestroy);
+  }
+
+  _appendToContainer(tost) {
+    if (!tost) {
+      return;
+    }
+    document.body.appendChild(tost);
   }
 }
 

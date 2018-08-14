@@ -1,3 +1,3 @@
-import Tosts from './Tosts';
+import Tost from './Tost';
 
-export default Tosts;
+export default Tost;

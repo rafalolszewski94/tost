@@ -1,3 +1,14 @@
+$colors: ();
+$colors: map_merge(
+    (
+      'info': #00adf7,
+      'success': #48b880,
+      'warning': #ff9132,
+      'error': #ea3c4f
+    ),
+    $colors
+);
+
 :global {
   .tost-container {
     position: fixed;
@@ -28,6 +39,14 @@
 
     &:not(:last-child) {
       margin-bottom: 15px;
+    }
+
+    @each $key, $color in $colors {
+      &.tost-#{$key} {
+        &::before {
+          background-color: $color;
+        }
+      }
     }
 
     .tost-close {
