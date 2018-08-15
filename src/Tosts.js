@@ -7,6 +7,7 @@ class Tosts {
    */
   constructor(options) {
     this.options = options || {};
+    this.all = [];
     this._createContainer();
 
     this.add = (options) => {
@@ -17,7 +18,10 @@ class Tosts {
   _add(options) {
     new Tost({
       el: this.container,
-    }).add(options);
+    }).add(options)
+        .then((tostID) => {
+          this.all.push(tostID);
+        });
   }
 
   _createContainer() {

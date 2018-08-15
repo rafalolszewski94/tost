@@ -13,3 +13,11 @@ tostTrigger.addEventListener('click', () => {
     type: tostType,
   });
 });
+
+const destroyAllTosts = () => {
+  // tosts.all.forEach(tost => tosts.destroy(tost.id));
+  console.log(tosts.all);
+};
+
+const destroyBtn = document.getElementById('destroyAll');
+destroyBtn.addEventListener('click', () => destroyAllTosts());

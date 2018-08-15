@@ -10,7 +10,9 @@ class Tost {
         throw new Error('Tost.add() requires options to be passed.');
       }
 
-      this._add(options);
+      return new Promise((resolve) => {
+        resolve(this._add(options));
+      });
     }
   }
 
@@ -30,6 +32,8 @@ class Tost {
     tost.innerHTML = `<span>${options && options.content}</span> <button class="tost-close">&times;</button>`;
     this._attachCloseListener(tost.querySelector('.tost-close'), this._id);
     this._appendToContainer(tost);
+
+    return this._id;
   }
 
   /**
